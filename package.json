@@ -1,7 +1,9 @@
 {
-  "name": "storybook",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@vshp/ui-components",
+  "version": "1.0.0",
+  "description": "VSHP UI components",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -17,8 +19,11 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "build-lib": "rollup -c"
   },
+  "author": "VSHP <info@vshp.online>",
+  "license": "MIT",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -48,6 +53,10 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-react": "^7.14.5",
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
     "@storybook/addon-actions": "^6.3.8",
     "@storybook/addon-controls": "^6.3.8",
     "@storybook/addon-essentials": "^6.3.8",
@@ -57,10 +66,20 @@
     "@storybook/preset-create-react-app": "^3.2.0",
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^6.3.8",
+    "babel-loader": "^8.2.2",
     "css-loader": "5.2.6",
+    "rollup": "^2.56.3",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-scss": "2",
+    "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.39.2",
     "sass-loader": "10",
     "style-loader": "2.0.0"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "resolutions": {
     "babel-loader": "8.1.0"
