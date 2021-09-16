@@ -26,6 +26,7 @@ Detailed docs and example usage can be found at our Storybook.
 ## Usage with SASS Variables
 
 If you need to change the default colors, import scss file from @vshp/ui-components/dist/index.scss
+
 Put it AFTER your scss variables import.
 
 # Development
