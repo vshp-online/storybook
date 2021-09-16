@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./button.scss";
+import "../../styles/index.scss";
 
 export const Button = ({ type, maxWidth, label, ...props }) => {
   const mode = maxWidth && 'btn_max_sm';
@@ -16,13 +16,11 @@ export const Button = ({ type, maxWidth, label, ...props }) => {
 Button.propTypes = {
   type: PropTypes.string,
   maxWidth: PropTypes.bool,
-  htmlType: PropTypes.string,
   onClick: PropTypes.func,
 };
 
 Button.defaultProps = {
   type: "primary",
   maxWidth: false,
-  htmlType: "button",
   onClick: undefined,
 };

@@ -14,16 +14,16 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "build-lib": "rollup -c"
   },
   "author": "VSHP <info@vshp.online>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VSHP-ONLINE/storybook"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -66,10 +66,12 @@
     "@storybook/preset-create-react-app": "^3.2.0",
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^6.3.8",
-    "babel-loader": "^8.2.2",
+    "babel-loader": "8.2.2",
     "css-loader": "5.2.6",
     "rollup": "^2.56.3",
     "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-bundle-scss": "^0.1.3",
+    "rollup-plugin-cleaner": "^1.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-scss": "2",
     "rollup-plugin-terser": "^7.0.2",

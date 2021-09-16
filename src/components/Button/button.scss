@@ -1,6 +1,4 @@
 .btn {
-  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-
   font-size: 14px;
   font-weight: 700;
   display: inline-block;
@@ -10,7 +8,7 @@
   cursor: pointer;
   outline: none;
 
-  border: 2px solid #781f19;
+  border: 2px solid $ui-btn-border;
 
   min-width: 182px;
   padding: 11px 15px;
@@ -18,28 +16,38 @@
   transition: all 0.2s ease-out;
 
   &:hover,
-  &:focus {
-    border-color: #853c36;
+  &:focus,
+  &:disabled {
+    border-color: $ui-btn-border-hover;
+  }
+
+  &.disabled,
+  &:disabled {
+    opacity: 0.25;
+    pointer-events: none;
+    cursor: not-allowed;
   }
 }
 
 .btn_primary {
-  background-color: #781f19;
-  color: #ffffff;
+  background-color: $ui-btn-primary;
+  color: $ui-btn-primary-color;
 
   &:hover,
-  &:focus {
-    background: #853c36;
+  &:focus,
+  &:disabled {
+    background: $ui-btn-primary-hover;
   }
 }
 
 .btn_outline {
-  background-color: transparent;
-  color: #781f19;
+  background-color: $ui-btn-outline;
+  color: $ui-btn-outline-color;
 
   &:hover,
-  &:focus {
-    color: #853c36;
+  &:focus,
+  &:disabled {
+    color: $ui-btn-outline-hover;
   }
 }
 
