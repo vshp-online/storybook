@@ -1,6 +1,8 @@
 $ui-color-primary: #781f19!default;
 $ui-color-primary-hover: #853c36!default;
 
+$ui-global-transition: all 0.2s ease-out;
+
 // Btns
 
 $ui-btn-primary: $ui-color-primary!default;
@@ -13,3 +15,6 @@ $ui-btn-outline-hover: $ui-color-primary-hover!default;
 
 $ui-btn-border: $ui-color-primary!default;
 $ui-btn-border-hover: $ui-color-primary-hover!default;
+
+$ui-btn-icon: #ffffff!default;
+$ui-btn-radius: 20px!default;

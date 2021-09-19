@@ -21,6 +21,12 @@ import { Button } from "@vshp/ui-components";
 
 And import styles from @vshp/ui-components/dist/index.css
 
+```
+@vshp/ui-components/dist/index.css
+```
+
+If you don't use Layout from [Ant Design](https://ant.design/components/layout/) use [Normalize](https://necolas.github.io/normalize.css/8.0.1/normalize.css)
+
 Detailed docs and example usage can be found at our Storybook.
 
 ## Usage with SASS Variables
