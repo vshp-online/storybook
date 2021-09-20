@@ -7,13 +7,13 @@ const renderTitle = (type, children, renderClassNames) => {
   let title;
   switch (type) {
     case "h1":
-      result = <h1 className={renderClassNames}>{children}</h1>;
+      title = <h1 className={renderClassNames}>{children}</h1>;
       break;
     case "h2":
-      result = <h2 className={renderClassNames}>{children}</h2>;
+      title = <h2 className={renderClassNames}>{children}</h2>;
       break;
     case "block":
-      result = <div className={renderClassNames}>{children}</div>;
+      title = <div className={renderClassNames}>{children}</div>;
       break;
     default:
       break;

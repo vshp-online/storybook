@@ -4,7 +4,7 @@ import external from "rollup-plugin-peer-deps-external";
 import { terser } from "rollup-plugin-terser";
 import commonjs from "@rollup/plugin-commonjs";
 import cleaner from "rollup-plugin-cleaner";
-import packageJson from './package.json';
+import packageJson from "./package.json";
 
 import scss from "rollup-plugin-scss";
 import bundleScss from "rollup-plugin-bundle-scss";
@@ -27,7 +27,6 @@ const config = [
       cleaner({
         targets: ["./dist"],
       }),
-      commonjs(),
       bundleScss({ exclusive: false, output: "index.scss" }),
       scss({
         outputStyle: "compressed",
@@ -38,6 +37,7 @@ const config = [
       }),
       external(),
       resolve(),
+      commonjs(),
       terser(),
     ],
   },
