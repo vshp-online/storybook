@@ -21,17 +21,20 @@ const renderTitle = (type, children, renderClassNames) => {
   return title;
 };
 
-export const Title = ({ children, className, type }) => {
-  const renderClassNames = cnTransform("title", `${className}`);
+export const Title = ({ children, className, type, decor }) => {
+  const modeDecor = decor && "title_decor";
+  const renderClassNames = cnTransform("title", modeDecor, `${className}`);
   return renderTitle(type, children, renderClassNames);
 };
 
 Title.propTypes = {
   type: PropTypes.string,
+  decor: PropTypes.bool,
   className: PropTypes.string,
 };
 
 Title.defaultProps = {
   type: "h1",
+  decor: true,
   className: "",
 };

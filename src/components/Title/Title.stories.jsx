@@ -10,6 +10,10 @@ export default {
       options: ["h1", "h2", "block"],
       control: { type: "radio" },
     },
+    decor: {
+      options: [true, false],
+      control: { type: "radio" },
+    },
   },
 };
 
@@ -18,4 +22,5 @@ const Template = (args) => <Title {...args}>Title</Title>;
 export const Default = Template.bind({});
 Default.args = {
   type: "h1",
+  decor: true,
 };
