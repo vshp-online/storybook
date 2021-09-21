@@ -37,6 +37,7 @@
   &:focus,
   &:disabled {
     background: $ui-btn-primary-hover;
+    color: $ui-btn-primary-color;
   }
 }
 
