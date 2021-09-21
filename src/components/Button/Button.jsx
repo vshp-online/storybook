@@ -16,7 +16,7 @@ export const Button = ({
 }) => {
   const modeWidth = maxWidth && "btn_max-width-sm";
   const modeSize = size && `btn_${size}`;
-  const modeIcon = size && "btn_small-icon";
+  const modeIcon = icon && "btn_small-icon";
   const modeCorners = corners && "btn_square";
 
   const renderClassNames = cnTransform(
