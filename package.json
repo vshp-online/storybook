@@ -1,6 +1,6 @@
 {
   "name": "@vshp/ui-components",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "VSHP UI components",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
