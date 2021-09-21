@@ -9,12 +9,12 @@ export const Button = ({
   view,
   maxWidth,
   corners,
-  icon,
+  size,
   href,
   ...props
 }) => {
   const modeWidth = maxWidth && "btn_max-width-sm";
-  const modeIcon = icon && "btn_small btn_icon-only";
+  const modeSize = size && `btn_${size}`;
   const modeCorners = corners && "btn_square";
 
   const renderClassNames = cnTransform(
@@ -22,22 +22,18 @@ export const Button = ({
     `btn_${view}`,
     modeCorners,
     modeWidth,
-    modeIcon,
+    modeSize,
     `${className}`
   );
 
-  const renderIcon = icon && <span className="btn__icon">{icon}</span>;
-
   const renderLink = (
     <a href={href} className={renderClassNames} {...props}>
-      {renderIcon}
       {children}
     </a>
   );
 
   const renderButton = (
     <button type="button" className={renderClassNames} {...props}>
-      {renderIcon}
       {children}
     </button>
   );
@@ -48,7 +44,7 @@ Button.propTypes = {
   view: PropTypes.string,
   corners: PropTypes.string,
   maxWidth: PropTypes.bool,
-  icon: PropTypes.node,
+  size: PropTypes.string,
   href: PropTypes.string,
   className: PropTypes.string,
   onClick: PropTypes.func,
@@ -58,7 +54,7 @@ Button.defaultProps = {
   view: "primary",
   corners: "",
   maxWidth: false,
-  icon: undefined,
+  size: "",
   onClick: undefined,
   className: "",
   href: undefined,
