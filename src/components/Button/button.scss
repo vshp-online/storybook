@@ -39,6 +39,10 @@
     background: $ui-btn-primary-hover;
     color: $ui-btn-primary-color;
   }
+
+  svg {
+    fill: $ui-btn-primary-icon;
+  }
 }
 
 .btn_outline {
@@ -51,16 +55,27 @@
   &:disabled {
     color: $ui-btn-outline-hover;
   }
+
+  svg {
+    fill: $ui-btn-outline-icon;
+  }
 }
 
 .btn_small {
   min-width: 40px;
-  min-height: 40px;
+  height: 40px;
   padding: 0;
   border: none;
 
   &.btn_outline {
     border: 2px solid $ui-btn-border;
+  }
+}
+
+.btn_small-icon {
+  span, svg {
+    width: 40px;
+    height: 40px;
   }
 }
 
