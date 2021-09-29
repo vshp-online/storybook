@@ -23,4 +23,11 @@ $ui-btn-radius: 20px!default;
 
 // Title
 
-$ui-title-line-color: $ui-color-primary;
+$ui-title-line-color: $ui-color-primary!default;
+
+// Card
+
+$ui-card-border: $ui-color-primary!default;
+$ui-card-title: #ffffff!default;
+$ui-card-cover: rgba(0, 0, 0, 0.5)!default;
+$ui-card-cover-hover: rgba(0, 0, 0, 0.45)!default;
