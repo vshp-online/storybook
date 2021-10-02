@@ -3,13 +3,19 @@ import PropTypes from "prop-types";
 import { cnTransform } from "../../utils/cn-transform";
 import { Link } from "react-router-dom";
 
-import "../../styles/index.scss";
-
-export const Card = ({ children, className, cover, link, title, btnText }) => {
+export const Card = ({
+  children,
+  className,
+  cover,
+  link,
+  title,
+  btnText,
+  ...props
+}) => {
   const renderClassNames = cnTransform("card", `${className}`);
 
   return (
-    <div className={renderClassNames}>
+    <div className={renderClassNames} {...props}>
       {cover && (
         <Link className="card__header" to={link}>
           {cover}

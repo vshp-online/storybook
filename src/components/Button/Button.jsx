@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { cnTransform } from "../../utils/cn-transform";
-import "../../styles/index.scss";
 
 export const Button = ({
   children,
@@ -44,6 +43,7 @@ export const Button = ({
 };
 
 Button.propTypes = {
+  children: PropTypes.node,
   view: PropTypes.string,
   corners: PropTypes.string,
   maxWidth: PropTypes.bool,
@@ -55,6 +55,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
+  children: undefined,
   view: "primary",
   corners: "",
   maxWidth: false,
