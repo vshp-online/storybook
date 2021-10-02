@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { cnTransform } from "../../utils/cn-transform";
-import "../../styles/index.scss";
 
 const renderTitle = (type, children, renderClassNames) => {
   let title;
@@ -28,12 +27,14 @@ export const Title = ({ children, className, type, decor }) => {
 };
 
 Title.propTypes = {
+  children: PropTypes.node,
   type: PropTypes.string,
   decor: PropTypes.bool,
   className: PropTypes.string,
 };
 
 Title.defaultProps = {
+  children: undefined,
   type: "h1",
   decor: true,
   className: "",
