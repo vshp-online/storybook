@@ -1,5 +1,7 @@
 .card {
   position: relative;
+  display: flex;
+  flex-direction: column;
   border-radius: 10px;
   overflow: hidden;
 
@@ -58,6 +60,7 @@
   }
 
   &__body {
+    flex-grow: 2;
     border: 2px solid $ui-card-border;
     border-top-width: 0;
     padding: 20px 20px 70px;
@@ -101,7 +104,8 @@
     height: 30px;
     z-index: 5;
 
-    svg {
+    svg,
+    span {
       width: 30px;
       height: 30px;
     }
@@ -127,19 +131,19 @@
       &_active {
         transform: translateY(0);
       }
-    }
 
-    &-title {
-      font-size: 20px;
-      line-height: 27px;
-      font-weight: 700;
-      color: $ui-card-backdrop-title;
-      margin: 0 0 20px;
-    }
+      &-title {
+        font-size: 20px;
+        line-height: 27px;
+        font-weight: 700;
+        color: $ui-card-backdrop-title;
+        margin: 0 0 20px;
+      }
 
-    &-btn {
-      min-width: 86px;
-      margin: 0 10px;
+      &-btn {
+        min-width: 86px;
+        margin: 0 10px;
+      }
     }
   }
 }
@@ -156,7 +160,7 @@
     }
 
     &__body {
-      padding: 30px 60px 70px 30px;
+      padding: 30px 60px 68px 30px;
     }
 
     &__title {

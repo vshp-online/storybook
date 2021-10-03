@@ -23,8 +23,8 @@ export const CardDelete = ({
       {btnDelete}
 
       <div className={renderClassNames}>
-        <div className="card__delete-title">{textConfirm}</div>
-        <div className="card__delete-buttons">
+        <div className="card__delete-backdrop-title">{textConfirm}</div>
+        <div className="card__delete-backdrop-buttons">
           {btnConfirm}
           {btnCancel}
         </div>

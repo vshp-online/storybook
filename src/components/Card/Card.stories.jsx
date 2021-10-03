@@ -40,12 +40,18 @@ const Template = (args) => (
 const TemplateDelete = (args) => {
   const [isDelete, toggleDelete] = useState(false);
   const btnConfirm = (
-    <Button className="card__delete-btn" onClick={() => toggleDelete(false)}>
+    <Button
+      className="card__delete-backdrop-btn"
+      onClick={() => toggleDelete(false)}
+    >
       Да
     </Button>
   );
   const btnCancel = (
-    <Button className="card__delete-btn" onClick={() => toggleDelete(false)}>
+    <Button
+      className="card__delete-backdrop-btn"
+      onClick={() => toggleDelete(false)}
+    >
       Нет
     </Button>
   );
@@ -72,7 +78,7 @@ const TemplateDelete = (args) => {
             }
             btnConfirm={btnConfirm}
             btnCancel={btnCancel}
-          ></CardDelete>
+          />
           <CardRow>
             <CardTitle>Уровень подготовки</CardTitle>
             <CardSubtitle>Бакалавриат</CardSubtitle>
