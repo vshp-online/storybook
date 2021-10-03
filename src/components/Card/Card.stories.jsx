@@ -2,10 +2,10 @@ import { React, useState } from "react";
 import { MemoryRouter } from "react-router-dom";
 
 import { Card } from "./Card";
-import { CardRow } from "./CardRow";
-import { CardTitle } from "./CardTitle";
-import { CardSubtitle } from "./CardSubtitle";
-import { CardDelete } from "./CardDelete";
+import { CardRow } from "../CardRow/CardRow";
+import { CardTitle } from "../CardTitle/CardTitle";
+import { CardSubtitle } from "../CardSubtitle/CardSubtitle";
+import { CardDelete } from "../CardDelete/CardDelete";
 
 import { Button } from "../Button/Button";
 
