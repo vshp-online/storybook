@@ -6,3 +6,5 @@ export { default as CardRow } from './components/CardRow/index.js';
 export { default as CardTitle } from './components/CardTitle/index.js';
 export { default as CardSubtitle } from './components/CardSubtitle/index.js';
 export { default as CardDelete } from './components/CardDelete/index.js';
+
+export { default as Progress } from './components/Progress/index.js';

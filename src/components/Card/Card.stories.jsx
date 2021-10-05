@@ -8,6 +8,7 @@ import { CardSubtitle } from "../CardSubtitle/CardSubtitle";
 import { CardDelete } from "../CardDelete/CardDelete";
 
 import { Button } from "../Button/Button";
+import { Progress } from "../Progress/Progress";
 
 export default {
   title: "Card",
@@ -28,6 +29,27 @@ const Template = (args) => (
       }}
     >
       <Card {...args}>
+        <CardRow>
+          <CardTitle>Уровень подготовки</CardTitle>
+          <CardSubtitle>Бакалавриат</CardSubtitle>
+        </CardRow>
+      </Card>
+    </div>
+  </MemoryRouter>
+);
+
+const TemplateWithProgress = (args) => (
+  <MemoryRouter>
+    <div
+      style={{
+        "max-width": "380px",
+      }}
+    >
+      <Card {...args}>
+        <CardRow>
+          <CardTitle>ПРОЙДЕНО</CardTitle>
+          <Progress progress={40} />
+        </CardRow>
         <CardRow>
           <CardTitle>Уровень подготовки</CardTitle>
           <CardSubtitle>Бакалавриат</CardSubtitle>
@@ -91,6 +113,18 @@ const TemplateDelete = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
+  cover: (
+    <img
+      alt="example"
+      src="https://vshp.online/system/study/program/14/preview_stanley-dai-242205-unsplash.jpg"
+    />
+  ),
+  title: "Менеджмент",
+  link: "https://my.vshp.online/programs/14",
+};
+
+export const CardWithProgress = TemplateWithProgress.bind({});
+CardWithProgress.args = {
   cover: (
     <img
       alt="example"
