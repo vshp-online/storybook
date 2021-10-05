@@ -33,3 +33,11 @@ $ui-card-cover: rgba(0, 0, 0, 0.5)!default;
 $ui-card-cover-hover: rgba(0, 0, 0, 0.45)!default;
 $ui-card-backdrop: rgba(0,0,0,.75)!default;
 $ui-card-backdrop-title: #ffffff!default;
+
+// progress
+
+$ui-progress-line: $ui-color-primary!default;
+$ui-progress-bg: #ffffff!default;
+$ui-border-radius: 5px!default;
+$ui-height-line-wrap: 10px!default;
+$ui-height-line: 6px!default;

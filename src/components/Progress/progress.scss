@@ -1,0 +1,21 @@
+.progress {
+  &__header {
+    font-weight: 700;
+    line-height: 26px;
+    text-align: right;
+    margin: 0 0 5px;
+  }
+
+  &__line-wrap {
+    background: $ui-progress-bg;
+    border: 2px solid $ui-progress-line;
+    height: $ui-height-line-wrap;
+    border-radius: $ui-border-radius;
+  }
+
+  &__line {
+    background: $ui-progress-line;
+    height: $ui-height-line;
+    max-width: 100%;
+  }
+}
