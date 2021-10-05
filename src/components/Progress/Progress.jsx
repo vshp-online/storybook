@@ -9,10 +9,10 @@ export const Progress = ({ className, progress, ...props }) => {
   const style = { width: `${progress}%` };
 
   return (
-    <div class={renderClassNames} {...props}>
-      <div class="progress__header">{progress}/100</div>
-      <div class="progress__line-wrap">
-        <div class="progress__line" style={style}></div>
+    <div className={renderClassNames} {...props}>
+      <div className="progress__header">{progress}/100</div>
+      <div className="progress__line-wrap">
+        <div className="progress__line" style={style}></div>
       </div>
     </div>
   );
