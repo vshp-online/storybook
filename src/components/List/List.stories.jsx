@@ -18,11 +18,11 @@ const icon = (
 const Template = (args) => (
   <MemoryRouter>
     <List {...args}>
-      <ListItem title="title" link="#" icon={icon} markText="text">
+      <ListItem title="title" link="#" icon={icon} mark="text">
         <div>content</div>
       </ListItem>
-      <ListItem title="title" link="#" markText="text"></ListItem>
-      <ListItem title="title" markText="text"></ListItem>
+      <ListItem title="title" link="#" mark="text"></ListItem>
+      <ListItem title="title" mark="text"></ListItem>
     </List>
   </MemoryRouter>
 );

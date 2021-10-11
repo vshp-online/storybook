@@ -3,9 +3,12 @@ import PropTypes from "prop-types";
 import "../../styles/index.scss";
 import { cnTransform } from "../../utils/cn-transform";
 
-export const List = ({ children, className, headerText, isLarge, ...props }) => {
+export const List = ({ children, className, headerText, isLarge, noBorderLast, noSpaceAround, ...props }) => {
   const modeSize = isLarge && "list_lg";
-  const renderClassNames = cnTransform("list", modeSize, `${className}`);
+  const modeBorder = noBorderLast && "list_no-border-last";
+  const modeSpace = noSpaceAround && "list_no-space-around";
+
+  const renderClassNames = cnTransform("list", modeSize, modeBorder, modeSpace, `${className}`);
 
   return (
     <section className={renderClassNames}>
@@ -20,6 +23,8 @@ List.propTypes = {
   headerText: PropTypes.string,
   className: PropTypes.string,
   isLarge: PropTypes.bool,
+  noBorderLast: PropTypes.bool,
+  noSpaceAround: PropTypes.bool,
 };
 
 List.defaultProps = {
@@ -27,4 +32,6 @@ List.defaultProps = {
   headerText: "",
   className: "",
   isLarge: false,
+  noBorderLast: false,
+  noSpaceAround: false,
 };

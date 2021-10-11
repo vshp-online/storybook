@@ -9,7 +9,8 @@ export const ListItem = ({
   className,
   link,
   title,
-  markText,
+  titleClass,
+  mark,
   markClass,
   icon,
   iconClass,
@@ -18,16 +19,17 @@ export const ListItem = ({
   const modeItem = icon && "list__item_icon";
   const renderClassNames = cnTransform("list__item", modeItem, `${className}`);
   const renderIconClassNames = cnTransform("list__item-icon", `${iconClass}`);
+  const renderTitleClassNames = cnTransform("list__item-title", `${titleClass}`);
   const renderMarkClassNames = cnTransform("list__item-mark", `${markClass}`);
 
   const renderIcon = icon && <div className={renderIconClassNames}>{icon}</div>;
   const renderBody = (
     <div className="list__item-body">
       {children}
-      <h3 className="list__item-title">{title}</h3>
+      {title && <h3 className={renderTitleClassNames}>{title}</h3>}
     </div>
   );
-  const renderMark = <div className={renderMarkClassNames}>{markText}</div>;
+  const renderMark = <div className={renderMarkClassNames}>{mark}</div>;
 
   return link ? (
     <li>
@@ -50,7 +52,8 @@ ListItem.propTypes = {
   children: PropTypes.node,
   link: PropTypes.string,
   title: PropTypes.string,
-  markText: PropTypes.string,
+  titleClass: PropTypes.string,
+  mark: PropTypes.node,
   markClass: PropTypes.string,
   className: PropTypes.string,
   icon: PropTypes.node,
@@ -61,7 +64,8 @@ ListItem.defaultProps = {
   children: undefined,
   link: "",
   title: "",
-  markText: "",
+  titleClass: "",
+  mark: undefined,
   markClass: "",
   className: "",
   icon: undefined,
