@@ -33,14 +33,14 @@ export const ListItem = ({
 
   return link ? (
     <li>
-      <Link className={renderClassNames} to={link}>
+      <Link className={renderClassNames} to={link} {...props}>
         {renderIcon}
         {renderBody}
         {renderMark}
       </Link>
     </li>
   ) : (
-    <li className={renderClassNames}>
+    <li className={renderClassNames} {...props}>
       {renderIcon}
       {renderBody}
       {renderMark}

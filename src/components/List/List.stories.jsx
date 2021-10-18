@@ -2,11 +2,16 @@ import React from "react";
 import { MemoryRouter } from "react-router-dom";
 
 import { List } from "./List";
-import { ListItem } from "../ListItem/ListItem";
+import ListDoc from "./List-Doc.mdx";
 
 export default {
   title: "List",
   component: List,
+  parameters: {
+    docs: {
+      page: ListDoc,
+    },
+  },
 };
 
 const icon = (
@@ -18,11 +23,11 @@ const icon = (
 const Template = (args) => (
   <MemoryRouter>
     <List {...args}>
-      <ListItem title="title" link="#" icon={icon} mark="text">
+      <List.ListItem title="title" link="#" icon={icon} mark="text">
         <div>content</div>
-      </ListItem>
-      <ListItem title="title" link="#" mark="text"></ListItem>
-      <ListItem title="title" mark="text"></ListItem>
+      </List.ListItem>
+      <List.ListItem title="title" link="#" mark="text" />
+      <List.ListItem title="title" mark="text" />
     </List>
   </MemoryRouter>
 );

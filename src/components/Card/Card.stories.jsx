@@ -25,7 +25,7 @@ const Template = (args) => (
   <MemoryRouter>
     <div
       style={{
-        "max-width": "380px",
+        "maxWidth": "380px",
       }}
     >
       <Card {...args}>
@@ -42,7 +42,7 @@ const TemplateWithProgress = (args) => (
   <MemoryRouter>
     <div
       style={{
-        "max-width": "380px",
+        "maxWidth": "380px",
       }}
     >
       <Card {...args}>
@@ -82,7 +82,7 @@ const TemplateDelete = (args) => {
     <MemoryRouter>
       <div
         style={{
-          "max-width": "380px",
+          "maxWidth": "380px",
         }}
       >
         <Card {...args}>
