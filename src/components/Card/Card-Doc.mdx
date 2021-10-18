@@ -1,0 +1,148 @@
+# Card
+
+import { ArgsTable } from "@storybook/addon-docs";
+import {
+  Default,
+  CardWithProgress,
+  CardWithDeleteBtn,
+} from "./Card.stories.jsx";
+import { Card } from "./Card";
+
+```
+<Card>
+  <Card.CardRow>
+    <Card.CardTitle>Title</Card.CardTitle>
+    <Card.CardSubtitle>Subtitle</Card.CardSubtitle>
+  </Card.CardRow>
+</Card>
+```
+
+<ArgsTable of={Card} />
+
+## Card.CardRow
+
+<ArgsTable of={Card.CardRow} />
+
+## Card.CardTitle
+
+<ArgsTable of={Card.CardTitle} />
+
+## Card.CardSubtitle
+
+<ArgsTable of={Card.CardSubtitle} />
+
+## Card.CardDelete
+
+<ArgsTable of={Card.CardDelete} />
+
+### Default
+
+<Default
+  cover={
+    <img
+      alt="example"
+      src="https://picsum.photos/id/1/400/400"
+    />
+  }
+  title="Cover Title"
+  link="#"
+/>
+
+```
+<Card
+  cover={
+    <img
+      alt="example"
+      src=""
+    />
+  }
+  title="Cover Title"
+  link="#"
+>
+  <Card.CardRow>
+    <Card.CardTitle>Title</Card.CardTitle>
+    <Card.CardSubtitle>Subtitle</Card.CardSubtitle>
+  </Card.CardRow>
+</Card>
+```
+
+### CardWithProgress
+
+<CardWithProgress
+  cover={
+    <img
+      alt="example"
+      src="https://picsum.photos/id/1/400/400"
+    />
+  }
+  title="Cover Title"
+  link="#"
+/>
+
+```
+<Card
+  cover={
+    <img
+      alt="example"
+      src=""
+    />
+  }
+  title="Cover Title"
+  link="#"
+>
+  <Card.CardRow>
+    <Card.CardTitle>Title</Card.CardTitle>
+    <Progress progress={40} />
+  </Card.CardRow>
+  <Card.CardRow>
+    <Card.CardTitle>Title</Card.CardTitle>
+    <Card.CardSubtitle>Subtitle</Card.CardSubtitle>
+  </Card.CardRow>
+</Card>
+```
+
+### CardWithDeleteBtn
+
+<CardWithDeleteBtn
+  cover={
+    <img
+      alt="example"
+      src="https://picsum.photos/id/1/400/400"
+    />
+  }
+  title="Cover Title"
+  link="#"
+/>
+
+```
+<Card
+  cover={
+    <img
+      alt="example"
+      src=""
+    />
+  }
+  title="Cover Title"
+  link="#"
+>
+  <Card.CardDelete
+    isDelete={isDelete}
+    btnDelete={
+      <Button
+        className="card__delete"
+        size={"small"}
+        icon={true}
+        onClick={() => toggleDelete(true)}
+      >
+        {deleteIcon}
+      </Button>
+    }
+    btnConfirm={btnConfirm}
+    btnCancel={btnCancel}
+  />
+  <Card.CardRow>
+    <Card.CardTitle>Title</Card.CardTitle>
+    <Card.CardSubtitle>Subtitle</Card.CardSubtitle>
+  </Card.CardRow>
+</Card>
+```

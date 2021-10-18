@@ -1,6 +1,9 @@
 $ui-color-primary: #781f19!default;
 $ui-color-primary-hover: #853c36!default;
 
+$ui-color-white: #ffffff!default;
+$ui-color-black: #000000!default;
+
 $ui-global-transition: all 0.2s ease-out;
 
 // Btns
@@ -41,3 +44,12 @@ $ui-progress-bg: #ffffff!default;
 $ui-border-radius: 5px!default;
 $ui-height-line-wrap: 10px!default;
 $ui-height-line: 6px!default;
+
+// list
+
+$ui-list-header: $ui-color-primary!default;
+$ui-list-item: $ui-color-black!default;
+$ui-list-item-border: 1px solid #e0e0e0!default;
+$ui-list-item-icon-bg: #448aff!default;
+$ui-list-item-icon: $ui-color-white!default;
+$ui-list-item-mark: #999999!default;

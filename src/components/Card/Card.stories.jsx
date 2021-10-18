@@ -2,17 +2,20 @@ import { React, useState } from "react";
 import { MemoryRouter } from "react-router-dom";
 
 import { Card } from "./Card";
-import { CardRow } from "../CardRow/CardRow";
-import { CardTitle } from "../CardTitle/CardTitle";
-import { CardSubtitle } from "../CardSubtitle/CardSubtitle";
-import { CardDelete } from "../CardDelete/CardDelete";
 
 import { Button } from "../Button/Button";
 import { Progress } from "../Progress/Progress";
 
+import CardDoc from "./Card-Doc.mdx";
+
 export default {
   title: "Card",
   component: Card,
+  parameters: {
+    docs: {
+      page: CardDoc,
+    },
+  },
 };
 
 const deleteIcon = (
@@ -25,14 +28,14 @@ const Template = (args) => (
   <MemoryRouter>
     <div
       style={{
-        "max-width": "380px",
+        "maxWidth": "380px",
       }}
     >
       <Card {...args}>
-        <CardRow>
-          <CardTitle>Уровень подготовки</CardTitle>
-          <CardSubtitle>Бакалавриат</CardSubtitle>
-        </CardRow>
+        <Card.CardRow>
+          <Card.CardTitle>Title</Card.CardTitle>
+          <Card.CardSubtitle>Subtitle</Card.CardSubtitle>
+        </Card.CardRow>
       </Card>
     </div>
   </MemoryRouter>
@@ -42,18 +45,18 @@ const TemplateWithProgress = (args) => (
   <MemoryRouter>
     <div
       style={{
-        "max-width": "380px",
+        "maxWidth": "380px",
       }}
     >
       <Card {...args}>
-        <CardRow>
-          <CardTitle>ПРОЙДЕНО</CardTitle>
+        <Card.CardRow>
+          <Card.CardTitle>Title</Card.CardTitle>
           <Progress progress={40} />
-        </CardRow>
-        <CardRow>
-          <CardTitle>Уровень подготовки</CardTitle>
-          <CardSubtitle>Бакалавриат</CardSubtitle>
-        </CardRow>
+        </Card.CardRow>
+        <Card.CardRow>
+          <Card.CardTitle>Title</Card.CardTitle>
+          <Card.CardSubtitle>Subtitle</Card.CardSubtitle>
+        </Card.CardRow>
       </Card>
     </div>
   </MemoryRouter>
@@ -82,11 +85,11 @@ const TemplateDelete = (args) => {
     <MemoryRouter>
       <div
         style={{
-          "max-width": "380px",
+          "maxWidth": "380px",
         }}
       >
         <Card {...args}>
-          <CardDelete
+          <Card.CardDelete
             isDelete={isDelete}
             btnDelete={
               <Button
@@ -101,10 +104,10 @@ const TemplateDelete = (args) => {
             btnConfirm={btnConfirm}
             btnCancel={btnCancel}
           />
-          <CardRow>
-            <CardTitle>Уровень подготовки</CardTitle>
-            <CardSubtitle>Бакалавриат</CardSubtitle>
-          </CardRow>
+          <Card.CardRow>
+            <Card.CardTitle>Title</Card.CardTitle>
+            <Card.CardSubtitle>Subtitle</Card.CardSubtitle>
+          </Card.CardRow>
         </Card>
       </div>
     </MemoryRouter>
@@ -116,11 +119,11 @@ Default.args = {
   cover: (
     <img
       alt="example"
-      src="https://vshp.online/system/study/program/14/preview_stanley-dai-242205-unsplash.jpg"
+      src="https://picsum.photos/id/1/400/400"
     />
   ),
-  title: "Менеджмент",
-  link: "https://my.vshp.online/programs/14",
+  title: "Cover Title",
+  link: "#",
 };
 
 export const CardWithProgress = TemplateWithProgress.bind({});
@@ -128,11 +131,11 @@ CardWithProgress.args = {
   cover: (
     <img
       alt="example"
-      src="https://vshp.online/system/study/program/14/preview_stanley-dai-242205-unsplash.jpg"
+      src="https://picsum.photos/id/1/400/400"
     />
   ),
-  title: "Менеджмент",
-  link: "https://my.vshp.online/programs/14",
+  title: "Cover Title",
+  link: "#",
 };
 
 export const CardWithDeleteBtn = TemplateDelete.bind({});
@@ -140,9 +143,9 @@ CardWithDeleteBtn.args = {
   cover: (
     <img
       alt="example"
-      src="https://vshp.online/system/study/program/14/preview_stanley-dai-242205-unsplash.jpg"
+      src="https://picsum.photos/id/1/400/400"
     />
   ),
-  title: "Менеджмент",
-  link: "https://my.vshp.online/programs/14",
+  title: "Cover Title",
+  link: "#",
 };
