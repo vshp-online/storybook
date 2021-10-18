@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "../../styles/index.scss";
 import { cnTransform } from "../../utils/cn-transform";
-import { ListItem } from "./ListItem";
+import { ListItem } from "./ListItem.jsx";
 
 
 export class List extends React.Component {
