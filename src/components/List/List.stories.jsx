@@ -23,11 +23,11 @@ const icon = (
 const Template = (args) => (
   <MemoryRouter>
     <List {...args}>
-      <List.ListItem title="title" link="#" icon={icon} mark="text">
+      <List.Item title="title" link="#" icon={icon} mark="text">
         <div>content</div>
-      </List.ListItem>
-      <List.ListItem title="title" link="#" mark="text" />
-      <List.ListItem title="title" mark="text" />
+      </List.Item>
+      <List.Item title="title" link="#" mark="text" />
+      <List.Item title="title" mark="text" />
     </List>
   </MemoryRouter>
 );
