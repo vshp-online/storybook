@@ -6,3 +6,4 @@ export { default as Card } from './components/Card/index.js';
 export { default as Progress } from './components/Progress/index.js';
 
 export { default as List } from './components/List/index.js';
+export { default as Switch } from './components/Switch/index.js';
