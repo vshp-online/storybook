@@ -32,10 +32,10 @@ const Template = (args) => (
       }}
     >
       <Card {...args}>
-        <Card.CardRow>
-          <Card.CardTitle>Title</Card.CardTitle>
-          <Card.CardSubtitle>Subtitle</Card.CardSubtitle>
-        </Card.CardRow>
+        <Card.Row>
+          <Card.Title>Title</Card.Title>
+          <Card.Subtitle>Subtitle</Card.Subtitle>
+        </Card.Row>
       </Card>
     </div>
   </MemoryRouter>
@@ -49,14 +49,14 @@ const TemplateWithProgress = (args) => (
       }}
     >
       <Card {...args}>
-        <Card.CardRow>
-          <Card.CardTitle>Title</Card.CardTitle>
+        <Card.Row>
+          <Card.Title>Title</Card.Title>
           <Progress progress={40} />
-        </Card.CardRow>
-        <Card.CardRow>
-          <Card.CardTitle>Title</Card.CardTitle>
-          <Card.CardSubtitle>Subtitle</Card.CardSubtitle>
-        </Card.CardRow>
+        </Card.Row>
+        <Card.Row>
+          <Card.Title>Title</Card.Title>
+          <Card.Subtitle>Subtitle</Card.Subtitle>
+        </Card.Row>
       </Card>
     </div>
   </MemoryRouter>
@@ -89,7 +89,7 @@ const TemplateDelete = (args) => {
         }}
       >
         <Card {...args}>
-          <Card.CardDelete
+          <Card.Delete
             isDelete={isDelete}
             btnDelete={
               <Button
@@ -104,10 +104,10 @@ const TemplateDelete = (args) => {
             btnConfirm={btnConfirm}
             btnCancel={btnCancel}
           />
-          <Card.CardRow>
-            <Card.CardTitle>Title</Card.CardTitle>
-            <Card.CardSubtitle>Subtitle</Card.CardSubtitle>
-          </Card.CardRow>
+          <Card.Row>
+            <Card.Title>Title</Card.Title>
+            <Card.Subtitle>Subtitle</Card.Subtitle>
+          </Card.Row>
         </Card>
       </div>
     </MemoryRouter>

@@ -6,7 +6,7 @@ import { ListItem } from "./ListItem.jsx";
 
 
 export class List extends React.Component {
-  static ListItem = ListItem;
+  static Item = ListItem;
 
   render() {
     const {

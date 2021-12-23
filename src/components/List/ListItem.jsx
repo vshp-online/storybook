@@ -8,6 +8,7 @@ export const ListItem = ({
   children,
   className,
   link,
+  isLinkOut,
   title,
   titleClass,
   mark,
@@ -33,11 +34,19 @@ export const ListItem = ({
 
   return link ? (
     <li>
-      <Link className={renderClassNames} to={link} {...props}>
-        {renderIcon}
-        {renderBody}
-        {renderMark}
-      </Link>
+      {isLinkOut ? (
+        <a className={renderClassNames} href={link} {...props}>
+          {renderIcon}
+          {renderBody}
+          {renderMark}
+        </a>
+      ) : (
+        <Link className={renderClassNames} to={link} {...props}>
+          {renderIcon}
+          {renderBody}
+          {renderMark}
+        </Link>
+      )}
     </li>
   ) : (
     <li className={renderClassNames} {...props}>
@@ -51,6 +60,7 @@ export const ListItem = ({
 ListItem.propTypes = {
   children: PropTypes.node,
   link: PropTypes.string,
+  isLinkOut: PropTypes.bool,
   title: PropTypes.string,
   titleClass: PropTypes.string,
   mark: PropTypes.node,
@@ -63,6 +73,7 @@ ListItem.propTypes = {
 ListItem.defaultProps = {
   children: undefined,
   link: "",
+  isLinkOut: false,
   title: "",
   titleClass: "",
   mark: undefined,

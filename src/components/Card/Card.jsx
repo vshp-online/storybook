@@ -9,10 +9,10 @@ import { CardTitle } from "./CardTitle.jsx";
 import { CardSubtitle } from "./CardSubtitle.jsx";
 
 export class Card extends React.Component {
-  static CardDelete = CardDelete;
-  static CardRow = CardRow;
-  static CardTitle = CardTitle;
-  static CardSubtitle = CardSubtitle;
+  static Delete = CardDelete;
+  static Row = CardRow;
+  static Title = CardTitle;
+  static Subtitle = CardSubtitle;
 
   render() {
     const {

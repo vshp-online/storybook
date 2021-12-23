@@ -1,0 +1,40 @@
+.switch {
+  position: relative;
+  display: inline-block;
+  min-width: 68px;
+  height: $ui-switch-height;
+  border-radius: 100px;
+  transition: all 0.2s;
+  background-color: $ui-switch;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  user-select: none;
+
+  &_checked {
+    background-color: $ui-switch-active;
+
+    .switch__handle {
+      left: calc(100% - 34px);
+    }
+  }
+
+  &[switch-click-animating="true"] {
+    animation: shadow_out 0.7s;
+  }
+
+  &__handle {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: $ui-switch-height;
+    height: $ui-switch-height;
+    border: 3px solid $ui-switch-active;
+
+    background: $ui-switch-handle;
+    border-radius: 17px;
+
+    transition: left 0.2s ease-in-out;
+  }
+}

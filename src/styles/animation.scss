@@ -1,0 +1,11 @@
+@keyframes shadow_out {
+  0% {
+    box-shadow: 0 0 0 0 rgba($ui-color-black, 0.1);
+  }
+  30% {
+    box-shadow: 0 0 0 5px rgba($ui-color-black, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 0 5px rgba($ui-color-black, 0);
+  }
+}
