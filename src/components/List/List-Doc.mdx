@@ -1,7 +1,7 @@
 # List
 
 import { ArgsTable } from '@storybook/addon-docs';
-import { Default, ListWithTitle, ListLarge } from "./List.stories.jsx";
+import { Default, ListWithTitle, ListLarge, ListWithLinkOut } from "./List.stories.jsx";
 import { List } from "./List";
 
 
@@ -15,7 +15,7 @@ import { List } from "./List";
 
 <ArgsTable of={List} />
 
-## List.ListItem
+## List.Item
 
 <ArgsTable of={List.ListItem} />
 
@@ -58,5 +58,17 @@ import { List } from "./List";
   </List.Item>
   <List.Item title="title" link="#" mark="text" />
   <List.Item title="title" mark="text" />
+</List>
+```
+
+### ListWithLinkOut
+
+<ListWithLinkOut />
+
+```
+<List {...args}>
+  <List.Item title="title" isLinkOut={true} link="#" icon={icon} mark="text" target="_blank">
+    <div>content</div>
+  </List.Item>
 </List>
 ```

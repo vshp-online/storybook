@@ -32,6 +32,16 @@ const Template = (args) => (
   </MemoryRouter>
 );
 
+const TemplateLinkOut = (args) => (
+  <MemoryRouter>
+    <List {...args}>
+      <List.Item title="title" isLinkOut={true} link="#" icon={icon} mark="text" target="_blank">
+        <div>content</div>
+      </List.Item>
+    </List>
+  </MemoryRouter>
+);
+
 export const Default = Template.bind({});
 
 export const ListWithTitle = Template.bind({});
@@ -43,3 +53,5 @@ export const ListLarge = Template.bind({});
 ListLarge.args = {
   isLarge: true,
 };
+
+export const ListWithLinkOut = TemplateLinkOut.bind({});
