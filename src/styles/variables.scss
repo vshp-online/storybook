@@ -4,6 +4,8 @@ $ui-color-primary-hover: #853c36!default;
 $ui-color-white: #ffffff!default;
 $ui-color-black: #000000!default;
 
+$ui-color-grey: #F5F5F5!default;
+
 $ui-global-transition: all 0.2s ease-out;
 
 // Btns
@@ -58,6 +60,11 @@ $ui-list-item-mark: #999999!default;
 
 $ui-list-ordered-num-bg: $ui-color-primary!default;
 $ui-list-ordered-num: $ui-color-white!default;
+
+// list description
+
+$ui-list-description-item-bg: $ui-color-grey!default;
+$ui-list-description-item: $ui-color-primary!default;
 
 // switch
 
