@@ -29,3 +29,7 @@ export const ListOrderedTwoColumnsLg = Template.bind({});
 ListOrderedTwoColumnsLg.args = {
   isTwoColumns: true,
 };
+export const ListOrderedThreeColumnsLg = Template.bind({});
+ListOrderedThreeColumnsLg.args = {
+  isThreeColumns: true,
+};
