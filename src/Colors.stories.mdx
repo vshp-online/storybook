@@ -1,0 +1,19 @@
+import { Meta, ColorPalette, ColorItem } from "@storybook/addon-docs/blocks";
+
+import { color } from "./utils/colors";
+
+<Meta title="Colors" />
+
+# Colors
+
+<ColorPalette>
+  <ColorItem title="Primary" colors={[color.primary]} />
+  <ColorItem title="Primary hover" colors={[color.primaryHover]} />
+  <ColorItem title="Primary pale" colors={[color.primaryPale]} />
+  <ColorItem title="Primary active" colors={[color.primaryActive]} />
+  <ColorItem title="Green" colors={[color.green]} />
+  <ColorItem title="Yellow" colors={[color.yellow]} />
+  <ColorItem title="Red" colors={[color.red]} />
+
+  <ColorItem title="Monochrome" colors={[color.darkest, color.mediumdark, color.medium, color.light, color.lightest]} />
+</ColorPalette>

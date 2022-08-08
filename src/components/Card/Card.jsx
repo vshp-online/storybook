@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import "../../styles/index.scss";
 import { cnTransform } from "../../utils/cn-transform";
-import { Link } from "react-router-dom";
 import { CardDelete } from "./CardDelete.jsx";
 import { CardRow } from "./CardRow.jsx";
 import { CardTitle } from "./CardTitle.jsx";
@@ -15,30 +14,21 @@ export class Card extends React.Component {
   static Subtitle = CardSubtitle;
 
   render() {
-    const {
-      children,
-      className,
-      cover,
-      link,
-      title,
-      btnText,
-      ...props
-    } = this.props;
+    const { children, className, cover, link, title, btnText, ...props } = this.props;
     const renderClassNames = cnTransform("card", `${className}`);
+    const CardLink = link;
 
     return (
       <div className={renderClassNames} {...props}>
         {cover && (
-          <Link className="card__header" to={link}>
+          <CardLink className="card__header">
             {cover}
             <h2 className="card__header-title">{title}</h2>
-          </Link>
+          </CardLink>
         )}
 
         <div className="card__body">{children}</div>
-        <Link className="btn btn_primary card__more" to={link}>
-          {btnText}
-        </Link>
+        <CardLink className="btn btn_primary card__more">{btnText}</CardLink>
       </div>
     );
   }
@@ -47,7 +37,7 @@ export class Card extends React.Component {
 Card.propTypes = {
   cover: PropTypes.node,
   title: PropTypes.string,
-  link: PropTypes.string,
+  link: PropTypes.elementType,
   btnText: PropTypes.string,
   className: PropTypes.string,
 };
@@ -55,7 +45,7 @@ Card.propTypes = {
 Card.defaultProps = {
   cover: undefined,
   title: "",
-  link: "",
+  link: undefined,
   btnText: "Подробнее",
   className: "",
 };

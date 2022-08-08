@@ -1,19 +1,19 @@
 import { React, useState } from "react";
-import { MemoryRouter } from "react-router-dom";
+import { MemoryRouter, Link } from "react-router-dom";
 
 import { Card } from "./Card";
 
 import { Button } from "../Button/Button";
 import { Progress } from "../Progress/Progress";
 
-import CardDoc from "./Card-Doc.mdx";
+// import CardDoc from "./Card-Doc.mdx";
 
 export default {
   title: "Card",
   component: Card,
   parameters: {
     docs: {
-      page: CardDoc,
+      // page: CardDoc,
     },
   },
 };
@@ -28,7 +28,7 @@ const Template = (args) => (
   <MemoryRouter>
     <div
       style={{
-        "maxWidth": "380px",
+        maxWidth: "380px",
       }}
     >
       <Card {...args}>
@@ -45,7 +45,7 @@ const TemplateWithProgress = (args) => (
   <MemoryRouter>
     <div
       style={{
-        "maxWidth": "380px",
+        maxWidth: "380px",
       }}
     >
       <Card {...args}>
@@ -65,18 +65,12 @@ const TemplateWithProgress = (args) => (
 const TemplateDelete = (args) => {
   const [isDelete, toggleDelete] = useState(false);
   const btnConfirm = (
-    <Button
-      className="card__delete-backdrop-btn"
-      onClick={() => toggleDelete(false)}
-    >
+    <Button className="card__delete-backdrop-btn" onClick={() => toggleDelete(false)}>
       Да
     </Button>
   );
   const btnCancel = (
-    <Button
-      className="card__delete-backdrop-btn"
-      onClick={() => toggleDelete(false)}
-    >
+    <Button className="card__delete-backdrop-btn" onClick={() => toggleDelete(false)}>
       Нет
     </Button>
   );
@@ -85,19 +79,14 @@ const TemplateDelete = (args) => {
     <MemoryRouter>
       <div
         style={{
-          "maxWidth": "380px",
+          maxWidth: "380px",
         }}
       >
         <Card {...args}>
           <Card.Delete
             isDelete={isDelete}
             btnDelete={
-              <Button
-                className="card__delete"
-                size={"small"}
-                icon={true}
-                onClick={() => toggleDelete(true)}
-              >
+              <Button className="card__delete" size={"small"} icon={true} onClick={() => toggleDelete(true)}>
                 {deleteIcon}
               </Button>
             }
@@ -114,38 +103,31 @@ const TemplateDelete = (args) => {
   );
 };
 
+function CardLink({ children, ...props }) {
+  return (
+    <Link to="/ff" {...props}>
+      {children}
+    </Link>
+  );
+}
+
 export const Default = Template.bind({});
 Default.args = {
-  cover: (
-    <img
-      alt="example"
-      src="https://picsum.photos/id/1/400/400"
-    />
-  ),
+  cover: <img alt="example" src="https://picsum.photos/id/1/400/400" />,
   title: "Cover Title",
-  link: "#",
+  link: CardLink,
 };
 
 export const CardWithProgress = TemplateWithProgress.bind({});
 CardWithProgress.args = {
-  cover: (
-    <img
-      alt="example"
-      src="https://picsum.photos/id/1/400/400"
-    />
-  ),
+  cover: <img alt="example" src="https://picsum.photos/id/1/400/400" />,
   title: "Cover Title",
-  link: "#",
+  link: CardLink,
 };
 
 export const CardWithDeleteBtn = TemplateDelete.bind({});
 CardWithDeleteBtn.args = {
-  cover: (
-    <img
-      alt="example"
-      src="https://picsum.photos/id/1/400/400"
-    />
-  ),
+  cover: <img alt="example" src="https://picsum.photos/id/1/400/400" />,
   title: "Cover Title",
-  link: "#",
+  link: CardLink,
 };

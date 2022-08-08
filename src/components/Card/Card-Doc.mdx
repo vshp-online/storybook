@@ -1,11 +1,7 @@
 # Card
 
 import { ArgsTable } from "@storybook/addon-docs";
-import {
-  Default,
-  CardWithProgress,
-  CardWithDeleteBtn,
-} from "./Card.stories.jsx";
+import { Default, CardWithProgress, CardWithDeleteBtn } from "./Card.stories.jsx";
 import { Card } from "./Card";
 
 ```
@@ -37,16 +33,17 @@ import { Card } from "./Card";
 
 ### Default
 
-<Default
-  cover={
-    <img
-      alt="example"
-      src="https://picsum.photos/id/1/400/400"
-    />
-  }
+{/* <Default
+  cover={<img alt="example" src="https://picsum.photos/id/1/400/400" />}
   title="Cover Title"
-  link="#"
-/>
+  link={function CardLink({ children, ...props }) {
+    return (
+      <Link to="/ff" {...props}>
+        {children}
+      </Link>
+    );
+  }}
+/> */}
 
 ```
 <Card
@@ -68,16 +65,7 @@ import { Card } from "./Card";
 
 ### CardWithProgress
 
-<CardWithProgress
-  cover={
-    <img
-      alt="example"
-      src="https://picsum.photos/id/1/400/400"
-    />
-  }
-  title="Cover Title"
-  link="#"
-/>
+{/_ <CardWithProgress cover={<img alt="example" src="https://picsum.photos/id/1/400/400" />} title="Cover Title" link="#" /> _/}
 
 ```
 <Card
@@ -103,16 +91,7 @@ import { Card } from "./Card";
 
 ### CardWithDeleteBtn
 
-<CardWithDeleteBtn
-  cover={
-    <img
-      alt="example"
-      src="https://picsum.photos/id/1/400/400"
-    />
-  }
-  title="Cover Title"
-  link="#"
-/>
+{/_ <CardWithDeleteBtn cover={<img alt="example" src="https://picsum.photos/id/1/400/400" />} title="Cover Title" link="#" /> _/}
 
 ```
 <Card
