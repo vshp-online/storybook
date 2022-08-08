@@ -1,6 +1,6 @@
 # @vshp/ui-components
 
-VSHP UI Components build on React with Storybook
+VSHP UI Components build on React v18 with Storybook v6
 
 ## Installation
 
