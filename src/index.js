@@ -12,3 +12,5 @@ export { default as ListDescription } from './components/ListDescription/index.j
 export { default as Switch } from './components/Switch/index.js';
 
 export { default as LinkDecor } from './components/Link/index.js';
+
+export { default as Section } from './components/Section/index.js';

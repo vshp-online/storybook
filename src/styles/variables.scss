@@ -5,6 +5,7 @@ $ui-color-white: #ffffff!default;
 $ui-color-black: #000000!default;
 
 $ui-color-grey: #F5F5F5!default;
+$ui-color-grey-pale: #E0E0E0;
 
 $ui-global-transition: all 0.2s ease-out;
 
@@ -77,3 +78,12 @@ $ui-switch-handle: $ui-color-white!default;
 
 $ui-link-border: $ui-color-primary!default;
 $ui-link-border-hover: $ui-color-primary-hover!default;
+
+// Section
+$ui-layout-width: 1200px!default;
+$ui-section-border: $ui-color-grey-pale!default;
+$ui-section-cover: $ui-color-black!default;
+$ui-section-cover-content: $ui-color-white!default;
+$ui-section-cover-light: $ui-color-black!default;
+$ui-section-cover-white: $ui-color-white!default;
+$ui-section-cover-white-content: $ui-color-black!default;

@@ -1,0 +1,131 @@
+.page__block {
+  margin: 0 auto 40px;
+
+  &:first-child:not(.page__block_cover) {
+    margin: 40px 0;
+  }
+
+  &_cover {
+    position: relative;
+    padding: 40px 20px;
+    color: $ui-section-cover-content;
+    margin: 0 -20px 40px;
+
+    &:not(.page__block_cover_white) {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: $ui-section-cover-content;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba($ui-section-cover, 0.7);
+    }
+
+    > * {
+      position: relative;
+      z-index: 3;
+    }
+
+    &_light {
+      &::before {
+        background: rgba($ui-section-cover-light, 0.5);
+      }
+    }
+
+    &_white {
+      color: $ui-section-cover-white-content;
+
+      &::before {
+        background: rgba($ui-section-cover-white, 0.9);
+      }
+    }
+  }
+
+  &-img {
+    position: absolute;
+    z-index: 1 !important;
+    object-fit: cover;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &-body_small {
+    max-width: 892px;
+  }
+
+  &_border {
+    border-bottom: 1px solid $ui-section-border;
+    padding: 0 0 40px;
+    margin: 0 0 40px;
+
+    // &:last-child {
+    //   border: none;
+    //   padding: 0;
+    // }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .page__block {
+    margin: 0 auto 50px;
+
+    &:first-child:not(.page__block_cover) {
+      margin: 50px 0;
+    }
+
+    &_cover {
+      padding: 50px 30px;
+      margin: 0 -30px 50px;
+    }
+
+    &_border {
+      padding: 0 0 50px;
+      margin: 0 0 50px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1075px) {
+  .page__block {
+    &:first-child:not(.page__block_cover) {
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .page__block {
+    width: 100%;
+    max-width: $ui-layout-width;
+    margin: 0 auto 60px;
+
+    &:first-child:not(.page__block_cover) {
+      margin: 60px auto;
+    }
+
+    &_cover {
+      width: auto;
+      max-width: 100%;
+      margin: 0 0 60px;
+      padding: 60px 50px;
+    }
+
+    &_border {
+      padding: 0 0 60px;
+      margin: 0 auto 60px;
+    }
+  }
+}
