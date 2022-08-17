@@ -73,7 +73,8 @@
 }
 
 .btn_small-icon {
-  span, svg {
+  span,
+  svg {
     width: 40px;
     height: 40px;
   }
@@ -83,8 +84,18 @@
   border-radius: 6px;
 }
 
+.btn_space_top {
+  margin-top: 20px;
+}
+
 @media only screen and (max-width: 767.98px) {
   .btn_max-width-sm {
     width: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .btn_space_top {
+    margin-top: 30px;
   }
 }
