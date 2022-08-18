@@ -1,0 +1,140 @@
+.steps {
+  counter-reset: steps;
+
+  &__item {
+    position: relative;
+    min-height: 157px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 0 60px;
+    margin: 0 0 3px;
+
+    &:last-child {
+      min-height: 46px;
+      margin: 0;
+
+      .steps__item-label-text {
+        padding-bottom: 0;
+      }
+    }
+
+    &:before {
+      counter-increment: steps;
+      content: counter(steps);
+
+      position: absolute;
+      left: 0;
+      top: 7px;
+
+      display: flex;
+      width: 40px;
+      height: 40px;
+      background: $ui-color-primary;
+      color: $ui-color-white;
+      border-radius: 6px;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1;
+
+      justify-content: center;
+      align-items: center;
+    }
+
+    &-label {
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    &-label-title {
+      font-size: 16px;
+      line-height: 1.25;
+      font-weight: 700;
+      text-transform: uppercase;
+      box-sizing: content-box;
+      display: flex;
+      align-items: center;
+      height: 40px;
+      padding: 7px 0;
+    }
+
+    &-label-text {
+      padding: 10px 0;
+
+      a {
+        color: $ui-color-primary;
+      }
+    }
+
+    &-decor {
+      position: absolute;
+      width: 2px;
+      background: $ui-color-primary;
+      top: 50px;
+      bottom: 0px;
+      left: 20px;
+      margin: 7px 0 0 -1px;
+
+      &:before,
+      &:after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        background: $ui-color-primary;
+        position: absolute;
+        left: 50%;
+        margin-left: -5px;
+        top: 0;
+      }
+
+      &:after {
+        top: auto;
+        bottom: 0;
+      }
+
+      .steps__item:last-child & {
+        display: none;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 374px) and (orientation: landscape) {
+  .steps {
+    &__item {
+      min-height: 116px;
+      margin: 0 0 4px;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .steps {
+    &__item {
+      min-height: 116px;
+      margin: 0 0 4px;
+
+      &-label {
+        font-size: 16px;
+        line-height: 1.625;
+      }
+
+      &-label-title {
+        font-size: 20px;
+        line-height: 1.35;
+      }
+
+      &-label-text {
+        padding: 15px 0;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1075px) {
+  .steps {
+    &__item {
+      max-width: 900px;
+    }
+  }
+}
