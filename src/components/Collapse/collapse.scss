@@ -1,0 +1,131 @@
+.collapse {
+  &__item {
+    border-radius: 10px;
+    box-shadow: 0 0 0 2px $ui-color-primary;
+    margin: 0 0 20px;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__header {
+    font-size: 16px;
+    line-height: 1.25;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    min-height: 60px;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 0 0 20px;
+  }
+
+  &__header-text {
+    padding: 10px 0;
+  }
+
+  &__header-icon {
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    justify-content: center;
+    order: 2;
+    flex-shrink: 0;
+    margin: 0 0 0 20px;
+    background: $ui-color-primary;
+    width: 60px;
+    height: 60px;
+    border-radius: 0 6px 6px 0;
+    box-shadow: 2px 0 0 0 $ui-color-primary;
+
+    .collapse__item_open & {
+      border-radius: 0 6px 0 10px;
+    }
+
+    svg {
+      width: 30px;
+      height: 30px;
+      fill: $ui-color-white;
+      transform: rotate(-90deg);
+      transition: $ui-global-transition;
+
+      .collapse__item_open & {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  &__content {
+    display: none;
+    max-width: 892px;
+    margin: 20px 0 0;
+    padding: 0 20px 10px;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    .collapse__item_open & {
+      display: block;
+      margin: 10px 0 0;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .collapse {
+    &__item {
+      margin: 0 0 30px;
+    }
+
+    &__header {
+      font-size: 20px;
+      line-height: 1.35;
+      padding: 0 0 0 30px;
+    }
+
+    &__header-text {
+      padding: 5px 0;
+    }
+
+    &__header-icon {
+      width: 67px;
+      height: 67px;
+      margin: 0 0 0 80px;
+
+      svg {
+        width: 35px;
+        height: 35px;
+      }
+    }
+
+    &__content {
+      font-size: 18px;
+      line-height: 1.6666;
+      padding: 0 20px 10px 30px;
+
+      .collapse__item_open & {
+        margin: 20px 120px 0 0;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1075px) {
+  .collapse {
+    &__item {
+      min-height: 40px;
+      margin: 0 0 40px;
+    }
+
+    &__content {
+      .collapse__item_open & {
+        margin: 12px 120px 0 0;
+      }
+    }
+  }
+}
