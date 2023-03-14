@@ -20,15 +20,21 @@ export class Card extends React.Component {
 
     return (
       <div className={renderClassNames} {...props}>
-        {cover && (
-          <CardLink className="card__header">
-            {cover}
-            <h2 className="card__header-title">{title}</h2>
-          </CardLink>
-        )}
+        {cover &&
+          (link ? (
+            <CardLink className="card__header">
+              {cover}
+              <h2 className="card__header-title">{title}</h2>
+            </CardLink>
+          ) : (
+            <div className="card__header">
+              {cover}
+              <h2 className="card__header-title">{title}</h2>
+            </div>
+          ))}
 
         <div className="card__body">{children}</div>
-        <CardLink className="btn btn_primary card__more">{btnText}</CardLink>
+        {link && <CardLink className="btn btn_primary card__more">{btnText}</CardLink>}
       </div>
     );
   }

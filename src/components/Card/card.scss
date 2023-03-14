@@ -16,7 +16,7 @@
     padding: 0 20px;
     overflow: hidden;
 
-    &:hover {
+    &:hover:not(div.card__header) {
       &::after {
         background: $ui-card-cover-hover;
       }
@@ -64,6 +64,7 @@
     border: 2px solid $ui-card-border;
     border-top-width: 0;
     padding: 20px 20px 70px;
+    border-radius: 0 0 10px 10px;
   }
 
   &__row {
