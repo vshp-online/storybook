@@ -3,15 +3,17 @@ import PropTypes from "prop-types";
 import "../../styles/index.scss";
 import { cnTransform } from "../../utils/cn-transform";
 import { BodySmall } from "./SectionBodySmall.jsx";
+import { Subtitle } from "./SectionSubtitle.jsx";
 
-const SectionComponent = ({ children, className, border, coverSrc, coverAlt, coverType, centered, noSpaceBottom, ...props }) => {
+const SectionComponent = ({ children, className, border, coverSrc, coverAlt, coverType, centered, noSpaceBottom, textSizeLg, ...props }) => {
   const modeDecor = border && "page__block_border";
   const modeCentered = centered && "page__block_center";
   const modeCover = coverSrc.length > 0 && "page__block_cover";
   const modeCoverType = coverType.length > 0 && `page__block_cover_${coverType}`;
   const modeSpaceBottom = noSpaceBottom && "page__block_no_space_bottom";
+  const modeTextSizeLg = textSizeLg && "page__block_text_lg";
 
-  const renderClassNames = cnTransform("page__block", modeDecor, modeCover, modeCentered, modeCoverType, modeSpaceBottom, `${className}`);
+  const renderClassNames = cnTransform("page__block", modeDecor, modeCover, modeCentered, modeCoverType, modeSpaceBottom, modeTextSizeLg, `${className}`);
   return (
     <section className={renderClassNames} {...props}>
       {coverSrc.length > 0 ? (
@@ -26,7 +28,7 @@ const SectionComponent = ({ children, className, border, coverSrc, coverAlt, cov
   );
 };
 
-export const Section = Object.assign(SectionComponent, { BodySmall });
+export const Section = Object.assign(SectionComponent, { BodySmall, Subtitle });
 
 Section.propTypes = {
   children: PropTypes.node,
@@ -37,6 +39,7 @@ Section.propTypes = {
   centered: PropTypes.bool,
   coverType: PropTypes.string,
   noSpaceBottom: PropTypes.bool,
+  textSizeLg: PropTypes.bool,
 };
 
 Section.defaultProps = {
@@ -48,4 +51,5 @@ Section.defaultProps = {
   centered: false,
   coverType: "",
   noSpaceBottom: false,
+  textSizeLg: false,
 };

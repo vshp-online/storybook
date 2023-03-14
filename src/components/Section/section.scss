@@ -67,6 +67,11 @@
     max-width: 892px;
   }
 
+  &-subtitle {
+    font-weight: $ui-section-subtitle-weight;
+    margin: 0 0 30px;
+  }
+
   &_border {
     border-bottom: 1px solid $ui-section-border;
     padding: 0 0 40px;
@@ -103,6 +108,16 @@
     &_border {
       padding: 0 0 50px;
       margin: 0 0 50px;
+    }
+
+    &-subtitle {
+      font-size: 18px;
+      line-height: 1.67;
+    }
+
+    &_text_lg {
+      font-size: 18px;
+      line-height: 1.7;
     }
   }
 }

@@ -3,18 +3,18 @@ import PropTypes from "prop-types";
 import "../../styles/index.scss";
 import { cnTransform } from "../../utils/cn-transform";
 
-export const BodySmall = ({ children, className }) => {
-  const renderClassNames = cnTransform("page__block-body_small", `${className}`);
+export const Subtitle = ({ children, className }) => {
+  const renderClassNames = cnTransform("page__block-subtitle", `${className}`);
 
-  return <div className={renderClassNames}>{children}</div>;
+  return <h3 className={renderClassNames}>{children}</h3>;
 };
 
-BodySmall.propTypes = {
+Subtitle.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
 };
 
-BodySmall.defaultProps = {
+Subtitle.defaultProps = {
   children: undefined,
   className: "",
 };

@@ -131,3 +131,9 @@ CardWithDeleteBtn.args = {
   title: "Cover Title",
   link: CardLink,
 };
+
+export const CardNoLink = Template.bind({});
+CardNoLink.args = {
+  cover: <img alt="example" src="https://picsum.photos/id/1/400/400" />,
+  title: "Cover Title",
+};
