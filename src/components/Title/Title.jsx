@@ -3,17 +3,17 @@ import PropTypes from "prop-types";
 import "../../styles/index.scss";
 import { cnTransform } from "../../utils/cn-transform";
 
-const renderTitle = (type, children, renderClassNames) => {
+const renderTitle = (type, children, renderClassNames, props) => {
   let title;
   switch (type) {
     case "h1":
-      title = <h1 className={renderClassNames}>{children}</h1>;
+      title = <h1 className={renderClassNames} {...props}>{children}</h1>;
       break;
     case "h2":
-      title = <h2 className={renderClassNames}>{children}</h2>;
+      title = <h2 className={renderClassNames} {...props}>{children}</h2>;
       break;
     case "block":
-      title = <div className={renderClassNames}>{children}</div>;
+      title = <div className={renderClassNames} {...props}>{children}</div>;
       break;
     default:
       break;
@@ -21,10 +21,10 @@ const renderTitle = (type, children, renderClassNames) => {
   return title;
 };
 
-export const Title = ({ children, className, type, decor }) => {
+export const Title = ({ children, className, type, decor, ...props }) => {
   const modeDecor = decor && "title_decor";
   const renderClassNames = cnTransform("title", modeDecor, `${className}`);
-  return renderTitle(type, children, renderClassNames);
+  return renderTitle(type, children, renderClassNames, props);
 };
 
 Title.propTypes = {
