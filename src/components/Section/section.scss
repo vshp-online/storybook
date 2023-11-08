@@ -72,6 +72,11 @@
     margin: 0 0 30px;
   }
 
+  &_text_lg {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
   &_border {
     border-bottom: 1px solid $ui-section-border;
     padding: 0 0 40px;
@@ -117,7 +122,6 @@
 
     &_text_lg {
       font-size: 18px;
-      line-height: 1.7;
     }
   }
 }

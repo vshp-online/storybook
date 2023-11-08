@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 
 import { cnTransform } from "../../utils/cn-transform";
 
-export const CardSubtitle = ({ children, className }) => {
+export const CardSubtitle = ({ children, className, ...props }) => {
   const renderClassNames = cnTransform("card__subtitle", `${className}`);
 
-  return <div className={renderClassNames}>{children}</div>;
+  return <div className={renderClassNames} {...props}>{children}</div>;
 };
 
 CardSubtitle.propTypes = {
