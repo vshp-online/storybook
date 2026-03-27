@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "../../styles/index.scss";
 import { cnTransform } from "../../utils/cn-transform";
 
-export const Button = ({ children, className, view, maxWidth, corners, size, icon, href, spaceTop, ...props }) => {
+export const Button = ({ children, className = "", view = "primary", maxWidth = false, corners = "", size = "", icon = false, href, spaceTop = false, ...props }) => {
   const modeWidth = maxWidth && "btn_max-width-sm";
   const modeSize = size && `btn_${size}`;
   const modeIcon = icon && "btn_small-icon";
@@ -37,17 +37,4 @@ Button.propTypes = {
   className: PropTypes.string,
   onClick: PropTypes.func,
   spaceTop: PropTypes.bool,
-};
-
-Button.defaultProps = {
-  children: undefined,
-  view: "primary",
-  corners: "",
-  maxWidth: false,
-  size: "",
-  icon: false,
-  onClick: undefined,
-  className: "",
-  href: undefined,
-  spaceTop: false,
 };

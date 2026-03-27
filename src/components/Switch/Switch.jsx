@@ -3,13 +3,7 @@ import PropTypes from "prop-types";
 import "../../styles/index.scss";
 import { cnTransform } from "../../utils/cn-transform";
 
-export const Switch = ({
-  children,
-  className,
-  defaultChecked,
-  onChange,
-  ...props
-}) => {
+export const Switch = ({ children, className = "", defaultChecked = false, onChange, ...props }) => {
   const [switchState, setSwitchState] = useState(defaultChecked);
   const [animationState, setAnimationState] = useState("false");
 
@@ -30,15 +24,7 @@ export const Switch = ({
   };
 
   return (
-    <button
-      type="button"
-      role="switch"
-      aria-checked={switchState}
-
-      className={renderClassNames}
-      onClick={toggleSwitch}
-      switch-click-animating={animationState}
-    >
+    <button type="button" role="switch" aria-checked={switchState} className={renderClassNames} onClick={toggleSwitch} switch-click-animating={animationState}>
       <span className="switch__handle"></span>
       {children}
     </button>
@@ -50,10 +36,4 @@ Switch.propTypes = {
   className: PropTypes.string,
   onChange: PropTypes.func,
   defaultChecked: PropTypes.bool,
-};
-
-Switch.defaultProps = {
-  children: undefined,
-  className: "",
-  defaultChecked: false,
 };

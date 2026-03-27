@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "../../styles/index.scss";
 import { cnTransform } from "../../utils/cn-transform";
 
-export const Item = ({ children, className, title, description, ...props }) => {
+export const Item = ({ children, className = "", title = "", description = "", ...props }) => {
   const renderClassNames = cnTransform("steps__item", `${className}`);
 
   return (
@@ -25,11 +25,4 @@ Item.propTypes = {
   className: PropTypes.string,
   title: PropTypes.string,
   description: PropTypes.string,
-};
-
-Item.defaultProps = {
-  children: undefined,
-  className: "",
-  title: "",
-  description: "",
 };

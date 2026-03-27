@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "../../styles/index.scss";
 import { cnTransform } from "../../utils/cn-transform";
 
-export const Progress = ({ className, progress, ...props }) => {
+export const Progress = ({ className = "", progress = 0, ...props }) => {
   const renderClassNames = cnTransform("progress", `${className}`);
 
   const style = { width: `${progress}%` };
@@ -21,9 +21,4 @@ export const Progress = ({ className, progress, ...props }) => {
 Progress.propTypes = {
   progress: PropTypes.number,
   className: PropTypes.string,
-};
-
-Progress.defaultProps = {
-  progress: 0,
-  className: "",
 };

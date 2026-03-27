@@ -4,27 +4,19 @@ import "../../styles/index.scss";
 import { cnTransform } from "../../utils/cn-transform";
 import { ListDescriptionItem } from "./ListDescriptionItem.jsx";
 
-export class ListDescription extends React.Component {
-  static Item = ListDescriptionItem;
+export const ListDescription = ({ children, className = "", ...props }) => {
+  const renderClassNames = cnTransform("list-description", `${className}`);
 
-  render() {
-    const { children, className, ...props } = this.props;
-    const renderClassNames = cnTransform("list-description", `${className}`);
+  return (
+    <div className={renderClassNames} {...props}>
+      {children}
+    </div>
+  );
+};
 
-    return (
-      <div className={renderClassNames} {...props}>
-        {children}
-      </div>
-    );
-  }
-}
+ListDescription.Item = ListDescriptionItem;
 
 ListDescription.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-};
-
-ListDescription.defaultProps = {
-  children: undefined,
-  className: "",
 };

@@ -4,7 +4,7 @@ import "../../styles/index.scss";
 import { cnTransform } from "../../utils/cn-transform";
 import { Item } from "./Item.jsx";
 
-const CollapseComponent = ({ children, className, ...props }) => {
+const CollapseComponent = ({ children, className = "", ...props }) => {
   const renderClassNames = cnTransform("collapse", `${className}`);
 
   return (
@@ -19,9 +19,4 @@ export const Collapse = Object.assign(CollapseComponent, { Item });
 Collapse.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-};
-
-Collapse.defaultProps = {
-  children: undefined,
-  className: "",
 };

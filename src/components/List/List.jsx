@@ -4,39 +4,21 @@ import "../../styles/index.scss";
 import { cnTransform } from "../../utils/cn-transform";
 import { ListItem } from "./ListItem.jsx";
 
+export const List = ({ children, className = "", headerText = "", isLarge = false, noBorderLast = false, noSpaceAround = false, ...props }) => {
+  const modeSize = isLarge && "list_lg";
+  const modeBorder = noBorderLast && "list_no-border-last";
+  const modeSpace = noSpaceAround && "list_no-space-around";
+  const renderClassNames = cnTransform("list", modeSize, modeBorder, modeSpace, `${className}`);
 
-export class List extends React.Component {
-  static Item = ListItem;
+  return (
+    <section className={renderClassNames} {...props}>
+      {headerText && <div className="list__header">{headerText}</div>}
+      <ul className="list__items">{children}</ul>
+    </section>
+  );
+};
 
-  render() {
-    const {
-      children,
-      className,
-      headerText,
-      isLarge,
-      noBorderLast,
-      noSpaceAround,
-      ...props
-    } = this.props;
-    const modeSize = isLarge && "list_lg";
-    const modeBorder = noBorderLast && "list_no-border-last";
-    const modeSpace = noSpaceAround && "list_no-space-around";
-    const renderClassNames = cnTransform(
-      "list",
-      modeSize,
-      modeBorder,
-      modeSpace,
-      `${className}`
-    );
-
-    return (
-      <section className={renderClassNames} {...props}>
-        {headerText && <div className="list__header">{headerText}</div>}
-        <ul className="list__items">{children}</ul>
-      </section>
-    );
-  }
-}
+List.Item = ListItem;
 
 List.propTypes = {
   children: PropTypes.node,
@@ -45,13 +27,4 @@ List.propTypes = {
   isLarge: PropTypes.bool,
   noBorderLast: PropTypes.bool,
   noSpaceAround: PropTypes.bool,
-};
-
-List.defaultProps = {
-  children: undefined,
-  headerText: "",
-  className: "",
-  isLarge: false,
-  noBorderLast: false,
-  noSpaceAround: false,
 };

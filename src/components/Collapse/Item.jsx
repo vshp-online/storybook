@@ -10,7 +10,7 @@ const icon = (
   </svg>
 );
 
-export const Item = ({ children, className, header, content, ...props }) => {
+export const Item = ({ children, className = "", header = "", content = "", ...props }) => {
   const [isToggled, setToggled] = useState(false);
   const modeOpen = isToggled && "collapse__item_open";
   const renderClassNames = cnTransform("collapse__item", modeOpen, `${className}`);
@@ -35,11 +35,4 @@ Item.propTypes = {
   className: PropTypes.string,
   header: PropTypes.string,
   content: PropTypes.string,
-};
-
-Item.defaultProps = {
-  children: undefined,
-  className: "",
-  header: "",
-  content: "",
 };

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "../../styles/index.scss";
 import { cnTransform } from "../../utils/cn-transform";
 
-export const ListDescriptionItem = ({ children, className, title, description, ...props }) => {
+export const ListDescriptionItem = ({ children, className = "", title = "", description = "", ...props }) => {
   const renderClassNames = cnTransform("list-description__item", `${className}`);
 
   return (
@@ -21,11 +21,4 @@ ListDescriptionItem.propTypes = {
   className: PropTypes.string,
   title: PropTypes.string,
   description: PropTypes.string,
-};
-
-ListDescriptionItem.defaultProps = {
-  children: undefined,
-  className: "",
-  title: "",
-  description: "",
 };

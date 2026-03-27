@@ -4,7 +4,7 @@ import "../../styles/index.scss";
 import { cnTransform } from "../../utils/cn-transform";
 import { Item } from "./Item.jsx";
 
-const StepsComponent = ({ children, className, ...props }) => {
+const StepsComponent = ({ children, className = "", ...props }) => {
   const renderClassNames = cnTransform("steps", `${className}`);
 
   return (
@@ -19,9 +19,4 @@ export const Steps = Object.assign(StepsComponent, { Item });
 Steps.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-};
-
-Steps.defaultProps = {
-  children: undefined,
-  className: "",
 };

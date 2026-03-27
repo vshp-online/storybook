@@ -5,7 +5,7 @@ import { cnTransform } from "../../utils/cn-transform";
 import { BodySmall } from "./SectionBodySmall.jsx";
 import { Subtitle } from "./SectionSubtitle.jsx";
 
-const SectionComponent = ({ children, className, border, coverSrc, coverAlt, coverType, centered, noSpaceBottom, textSizeLg, ...props }) => {
+const SectionComponent = ({ children, className = "", border = false, coverSrc = "", coverAlt = "", coverType = "", centered = false, noSpaceBottom = false, textSizeLg = false, ...props }) => {
   const modeDecor = border && "page__block_border";
   const modeCentered = centered && "page__block_center";
   const modeCover = coverSrc.length > 0 && "page__block_cover";
@@ -40,16 +40,4 @@ Section.propTypes = {
   coverType: PropTypes.string,
   noSpaceBottom: PropTypes.bool,
   textSizeLg: PropTypes.bool,
-};
-
-Section.defaultProps = {
-  children: undefined,
-  coverAlt: "",
-  border: false,
-  className: "",
-  coverSrc: "",
-  centered: false,
-  coverType: "",
-  noSpaceBottom: false,
-  textSizeLg: false,
 };

@@ -7,13 +7,25 @@ const renderTitle = (type, children, renderClassNames, props) => {
   let title;
   switch (type) {
     case "h1":
-      title = <h1 className={renderClassNames} {...props}>{children}</h1>;
+      title = (
+        <h1 className={renderClassNames} {...props}>
+          {children}
+        </h1>
+      );
       break;
     case "h2":
-      title = <h2 className={renderClassNames} {...props}>{children}</h2>;
+      title = (
+        <h2 className={renderClassNames} {...props}>
+          {children}
+        </h2>
+      );
       break;
     case "block":
-      title = <div className={renderClassNames} {...props}>{children}</div>;
+      title = (
+        <div className={renderClassNames} {...props}>
+          {children}
+        </div>
+      );
       break;
     default:
       break;
@@ -21,7 +33,7 @@ const renderTitle = (type, children, renderClassNames, props) => {
   return title;
 };
 
-export const Title = ({ children, className, type, decor, ...props }) => {
+export const Title = ({ children, className = "", type = "h1", decor = true, ...props }) => {
   const modeDecor = decor && "title_decor";
   const renderClassNames = cnTransform("title", modeDecor, `${className}`);
   return renderTitle(type, children, renderClassNames, props);
@@ -32,11 +44,4 @@ Title.propTypes = {
   type: PropTypes.string,
   decor: PropTypes.bool,
   className: PropTypes.string,
-};
-
-Title.defaultProps = {
-  children: undefined,
-  type: "h1",
-  decor: true,
-  className: "",
 };

@@ -7,38 +7,35 @@ import { CardRow } from "./CardRow.jsx";
 import { CardTitle } from "./CardTitle.jsx";
 import { CardSubtitle } from "./CardSubtitle.jsx";
 
-export class Card extends React.Component {
-  static Delete = CardDelete;
-  static Row = CardRow;
-  static Title = CardTitle;
-  static Subtitle = CardSubtitle;
+export const Card = ({ children, className = "", cover, link, title = "", btnText = "Подробнее", ...props }) => {
+  const renderClassNames = cnTransform("card", `${className}`);
+  const CardLink = link;
 
-  render() {
-    const { children, className, cover, link, title, btnText, ...props } = this.props;
-    const renderClassNames = cnTransform("card", `${className}`);
-    const CardLink = link;
+  return (
+    <div className={renderClassNames} {...props}>
+      {cover &&
+        (link ? (
+          <CardLink className="card__header">
+            {cover}
+            <h2 className="card__header-title">{title}</h2>
+          </CardLink>
+        ) : (
+          <div className="card__header">
+            {cover}
+            <h2 className="card__header-title">{title}</h2>
+          </div>
+        ))}
 
-    return (
-      <div className={renderClassNames} {...props}>
-        {cover &&
-          (link ? (
-            <CardLink className="card__header">
-              {cover}
-              <h2 className="card__header-title">{title}</h2>
-            </CardLink>
-          ) : (
-            <div className="card__header">
-              {cover}
-              <h2 className="card__header-title">{title}</h2>
-            </div>
-          ))}
+      <div className="card__body">{children}</div>
+      {link && <CardLink className="btn btn_primary card__more">{btnText}</CardLink>}
+    </div>
+  );
+};
 
-        <div className="card__body">{children}</div>
-        {link && <CardLink className="btn btn_primary card__more">{btnText}</CardLink>}
-      </div>
-    );
-  }
-}
+Card.Delete = CardDelete;
+Card.Row = CardRow;
+Card.Title = CardTitle;
+Card.Subtitle = CardSubtitle;
 
 Card.propTypes = {
   cover: PropTypes.node,
@@ -46,12 +43,4 @@ Card.propTypes = {
   link: PropTypes.elementType,
   btnText: PropTypes.string,
   className: PropTypes.string,
-};
-
-Card.defaultProps = {
-  cover: undefined,
-  title: "",
-  link: undefined,
-  btnText: "Подробнее",
-  className: "",
 };

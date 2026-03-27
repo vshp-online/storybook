@@ -3,20 +3,9 @@ import PropTypes from "prop-types";
 
 import { cnTransform } from "../../utils/cn-transform";
 
-export const CardDelete = ({
-  className,
-  isDelete,
-  btnDelete,
-  textConfirm,
-  btnConfirm,
-  btnCancel,
-}) => {
+export const CardDelete = ({ className = "", isDelete = false, btnDelete, textConfirm = "Вы уверены, что хотите удалить данную программу?", btnConfirm, btnCancel }) => {
   const modeDeleteBackdrop = isDelete && "card__delete-backdrop_active";
-  const renderClassNames = cnTransform(
-    `${className}`,
-    "card__delete-backdrop",
-    modeDeleteBackdrop
-  );
+  const renderClassNames = cnTransform(`${className}`, "card__delete-backdrop", modeDeleteBackdrop);
 
   return (
     <>
@@ -41,14 +30,4 @@ CardDelete.propTypes = {
   textConfirm: PropTypes.string,
   btnConfirm: PropTypes.node,
   btnCancel: PropTypes.node,
-};
-
-CardDelete.defaultProps = {
-  children: undefined,
-  className: "",
-  btnDelete: undefined,
-  isDelete: false,
-  textConfirm: "Вы уверены, что хотите удалить данную программу?",
-  btnConfirm: undefined,
-  btnCancel: undefined,
 };

@@ -4,19 +4,7 @@ import "../../styles/index.scss";
 import { cnTransform } from "../../utils/cn-transform";
 import { Link } from "react-router-dom";
 
-export const ListItem = ({
-  children,
-  className,
-  link,
-  isLinkOut,
-  title,
-  titleClass,
-  mark,
-  markClass,
-  icon,
-  iconClass,
-  ...props
-}) => {
+export const ListItem = ({ children, className = "", link = "", isLinkOut = false, title = "", titleClass = "", mark, markClass = "", icon, iconClass = "", ...props }) => {
   const modeItem = icon && "list__item_icon";
   const renderClassNames = cnTransform("list__item", modeItem, `${className}`);
   const renderIconClassNames = cnTransform("list__item-icon", `${iconClass}`);
@@ -68,17 +56,4 @@ ListItem.propTypes = {
   className: PropTypes.string,
   icon: PropTypes.node,
   iconClass: PropTypes.string,
-};
-
-ListItem.defaultProps = {
-  children: undefined,
-  link: "",
-  isLinkOut: false,
-  title: "",
-  titleClass: "",
-  mark: undefined,
-  markClass: "",
-  className: "",
-  icon: undefined,
-  iconClass: "",
 };
