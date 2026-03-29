@@ -1,3 +1,5 @@
+@use "../../styles/variables" as *;
+
 .list-ordered {
   counter-reset: ordered;
 

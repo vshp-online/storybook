@@ -5,9 +5,9 @@ import { terser } from "rollup-plugin-terser";
 import commonjs from "@rollup/plugin-commonjs";
 import cleaner from "rollup-plugin-cleaner";
 import packageJson from "./package.json";
+import bundleFullScss from "./src/utils/bundleFullScss.js";
 
 import scss from "rollup-plugin-scss";
-import bundleScss from "rollup-plugin-bundle-scss";
 
 const config = [
   {
@@ -27,14 +27,16 @@ const config = [
       cleaner({
         targets: ["./dist"],
       }),
-      bundleScss({ exclusive: false, output: "index.scss" }),
+
+      bundleFullScss(),
       scss({
+        fileName: "index.css",
         outputStyle: "compressed",
       }),
       babel({
         exclude: "node_modules/**",
         presets: ["@babel/preset-react"],
-        plugins: ["@babel/plugin-proposal-class-properties"]
+        plugins: ["@babel/plugin-proposal-class-properties"],
       }),
       external(),
       resolve(),
