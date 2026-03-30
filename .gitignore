@@ -13,10 +13,10 @@
 
 # misc
 .DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+
+# Environment variables
+.env
+.npmrc
 
 npm-debug.log*
 yarn-debug.log*
@@ -24,6 +24,9 @@ yarn-error.log*
 
 # lib
 /dist
+
+# Storybook build output
+/storybook-static
 
 .yarn/*
 !.yarn/patches
